@@ -18,6 +18,7 @@ html, body {
 	height: 100%;
 	width: 100%;
 }
+
 .table-row {
 	display: table-row;
 }
@@ -32,14 +33,24 @@ html, body {
 	font-size: 80pt;
 	text-align: center;
 	color: white;
-	background-color: orange;
+	background-color: #E12727;
 	margin-top: 2em;
 }
 
 .box {
 	border: 0.15em solid black;
+	width: 40em;
 }
 
+
+
+.picture {
+	background: url(unsplash.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+}
 
 #body {
 	vertical-align: middle;
@@ -50,7 +61,7 @@ html, body {
 
 #list {
 	margin: 0 auto;
-	width: 40em;
+	background-color: white;
 }
 
 
