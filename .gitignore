@@ -18,6 +18,9 @@
 
 # additional
 **/*.jpg
+html/Resume
+
+
 **/.netrwhist
 
 
