@@ -27,54 +27,83 @@ html, body {
 	display: table-cell;
 }
 
-#header {
+#fixed-header {
+	width: 100%;
+	position: fixed;
+	margin: 1em;
+	font-size: 40pt;
+}
+
+
+
+#title {
 	width: 100%;
 	font-weight: bold;
-	font-size: 80pt;
-	text-align: center;
+	text-align: left;
 	color: white;
 	background-color: #E12727;
+	padding: 0em 1em;
+	box-shadow: 15px 15px 40px 0px black;
+}
+
+
+#body {
+	width: 40%;
+	text-align: left;
+	vertical-align: middle;
+	background-color: white;
+	padding: 0.5em 1em;
+	height: 100%;
+	box-shadow: 15px 15px 40px 0px black;
+}
+
+#margin {
+	text-align: center;
+	padding: 0.5em 1em;
+}
+
+
+
+ul {
+	font-size: 14pt;
+	list-style: none;
+	/*margin-left: 2em;
 	margin-top: 2em;
+	margin-bottom: 2em;*/
 }
 
-.box {
-	border: 0.15em solid black;
-	width: 40em;
+ul li {
+	margin-bottom: 1em;
 }
 
 
 
-.picture {
-	background: url(unsplash.jpg);
+
+.image {
+	max-width: 4704px;
+	max-height: 3136px;
+	background-image: url(matterhorn.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
+	width: 100%;
+	margin: 0 auto;
 	background-attachment: fixed;
 }
 
-#body {
-	vertical-align: middle;
-	margin: 0 auto;
-	height: 100%;
+.image:after {
+	content: " ";
+	display: block;
+	width: 100%;
+	padding-top: 4.918%;
+	height: 950px;
 }
+
 
 
 #list {
 	margin: 0 auto;
 	background-color: white;
-}
-
-
-ul {
-	list-style: none;
-	margin-left: 2em;
-	margin-top: 2em;
-	margin-bottom: 2em;
-	font-size: 14pt;
-}
-
-ul li {
-	margin-top: 1em;
 }
 
 
