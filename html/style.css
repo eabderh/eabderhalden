@@ -4,11 +4,14 @@
 }
 
 html, body {
+	/*
 	background-color: #FFFFFF;
+	*/
 	width: 100%;
 	height: 100%;
 	/*font: 12pt "lucida console", monaco, monospace;*/
 	font: 12pt "monospace", monospace;
+	font-size: 0pt;
 	/*-webkit-font-smoothing: antialiased;*/
 }
 
@@ -16,32 +19,76 @@ html, body {
 
 #fixed-header {
 	width: 100%;
-	position: fixed;
 	margin: 1em;
-	font-size: 40pt;
+	font-size: 0pt;
 }
 
 
+#spacer {
+	content: " ";
+	position: fixed;
+	width: 100%;
+	height: 2em;
+	background: inherit;
+	font-size: 40pt;
+}
 
 #title {
-	width: 100%;
+	width: auto;
 	font-weight: bold;
 	text-align: left;
+	padding-left: 0.5em;
+	font-size: 40pt;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+#title-container {
+	margin-top: 2em;
+	margin-left: 10%;
+	position: fixed;
+	width: 80%;
+	height: 15%;
 	color: white;
 	background-color: #E12727;
-	padding: 0.5em 1em;
 	box-shadow: 15px 15px 40px 0px rgba(0, 0, 0, 0.5);
+	font-size: 40pt;
+	display: table;
+}
+/*#title:before {
+	/*position: fixed;
+	width: 100%;
+	height: 40px;
+	padding: 0.5em 1em;
+	font-size: 40pt;
+	background: inherit;
+	content: " ";
+	display: block;
+	padding-top: 4.918%;
+}*/
+
+
+#body-container {
+	margin-left: 10%;
+	width: 80%;
+	overflow: hidden;
+	box-shadow: 5px 5px 40px 0px rgba(0, 0, 0, 0.5);
+	font-size: 40pt
+}
+
+
+#fixed {
 }
 
 
 #body {
-	width: 40%;
+	margin-top: 4em;
 	text-align: left;
 	vertical-align: middle;
 	background-color: white;
 	padding: 0.5em 1em;
 	height: 100%;
-	box-shadow: 15px 15px 40px 0px rgba(0, 0, 0, 0.5);
+	width: 40%;
 }
 
 #margin {
@@ -90,7 +137,7 @@ html, body {
 
 
 
-.image {
+#image {
 	max-width: 4704px;
 	max-height: 3136px;
 	background-image: url(matterhorn.jpg);
@@ -100,17 +147,31 @@ html, body {
 	width: 100%;
 	margin: 0 auto;
 	background-attachment: fixed;
+	font-size: 0pt;
+	overflow: auto;
 }
 
-.image:after {
+#image:after {
+	content: " ";
+	display: block;
+	width: 100%;
+	padding-top: 5%;
+	/*
+	padding-top: 4.918%;
+	height: 950px;
+	*/
+}
+
+
+/*
+#image:before {
 	content: " ";
 	display: block;
 	width: 100%;
 	padding-top: 4.918%;
-	height: 950px;
+	height: 2em;
 }
-
-
+*/
 a,a:link {
 	color: inherit;
 	text-decoration: none;
