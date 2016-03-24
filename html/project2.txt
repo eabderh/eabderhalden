@@ -1,0 +1,70 @@
+---- FILE HEADER ---------------------------------------------------------------
+project: 	Project 2
+file: 		project2.txt
+author: 	Elias Abderhalden
+date: 		2016-03-24
+--------------------------------------------------------------------------------
+class: 		ece4400 spring 2016
+instructor: Dr. Kuang-Ching Wang
+assignment: Project 2
+purpose: 	GENI
+--------------------------------------------------------------------------------
+
+
+
+
+1. 	The main advantage of the SDN/OpenFlow protocol is that the links are more
+dependable and adaptable. For example, the ability to adapt allows SDN/OpenFlow
+to keep a connection or running fast even when there was a interruption or
+slowdown in one of the links by rerouting traffic to a fail-safe redundant
+link. The main drawback of SDN/OpenFlow is that it can only be applied in
+situations where the hardware is available, the configuration of the virtual
+routers is manageable, and the need for an adaptable network exists. For
+networks that are somewhat small or very stable and consistent there exists
+almost no need for SDN/OpenFlow.
+
+
+2. 	An OpenFlow group is a set of buckets, which are sets of abstract
+operations that depend on the group type. So, an OpenFlow group just applies a
+certain action using the buckets for each packet given to the group. A OpenFlow
+flow, on the other hand, is a rule that applies a incomming packet to a group,
+mostly by differentiating by type/protocol of packet.
+
+
+3. 	The floodlight OpenFlow controller sets up all of the OpenFlow groups,
+buckets, and flows on the individual OpenFlow nodes. However, it can also
+change the settings as the network is active which allows greater flexibity
+than a traditional, non-OpenFlow/SDN network.
+
+4. 	The main motivation for having link redundancy is that the connection will
+stay up even if one of the links has a disturbance or disconnects completely.
+This is especially important when the network is critical, like a hospital or
+military network.
+
+
+5. 	For this tutorial the controller was involved in the failover execution by
+selecting which links were considered up and which were considered down and
+therefore controlling which link was used for data transfer.  However, in a
+real event were one of the links had just failed the node would use the
+OpenFlow failover group to switch over to the connection still up by itself
+without using the controller. The controller not being needed for failover
+switching is one of the main reasons failover groups can be enacted so fast.
+
+
+6. 	I did not notice any loss in packets during failover execution in the
+tutorial when I used the ping command. All of the sequence numbers matched up,
+even when the network was switched multiple times during the same transmittion
+period. However I did use the iperf utility and that yielded a %0.11 loss in
+packets (1 out of 893 packets).
+
+
+7. 	If a link is disconnected while a packet is transmitted across it, there
+will be some loss of data simply because part of the packet will have been cut
+out and won't be received by the receiving node. The propagation delay dictates
+that the all of the bits in the packet will not arrive at the same time and
+that while some bits might have been received, some bits are still being
+transmitted within the link and could possibly be lost. An unlikely scenario is
+that the receiving node can perform error detection and the sending node has
+buffered the packet and is able to retransmit it.
+
+
