@@ -1,48 +1,53 @@
-$column: 200px;
-$row: 200px;
-$offset_border: 40px;
-$offset_sidebar: $column + $offset_border;
+$column: 250px;
+$row: 100px;
+$offset_path: 50px;
+$offset_border: 50px;
+$offset_sidebar: $column + $offset_path;
 $base: #E12727;
 $angle: 50deg;
-
-body, html {
-	margin: 0;
-}
-
-h1 {
-	font-family: Tahoma,Verdana,Segoe,sans-serif;
-}
-
 
 @mixin bottom-align-outer {
 	position: relative;
 }
-
 @mixin bottom-align-inner {
 	position: absolute;
 	bottom: 0;
 }
 
 
+body, html {
+	margin: 0;
+}
+
+h1 {
+	//font-family: Tahoma,Verdana,Segoe,sans-serif;
+	font-family: Geneva,Tahoma,Verdana,sans-serif;
+}
+
+
 .sidebar {
 	position: fixed;
+	top: 0;
+	left: 0;
 	width: $column;
 	height: 100%;
+	margin-left: $offset_border;
 
 	background: white;
-
 
 	> div {
 		box-shadow: 15px 15px 40px 0px rgba(0, 0, 0, 0.5);
 	}
-
+	.logo {
+		margin-top: $offset_border;
+	}
 	.logo img {
 		width: $column;
-		height: $row;
+		height: $column;
 	}
 
 	.navigation {
-		margin-top: $offset_border;
+		margin-top: $offset_path;
 		height: 100%;
 		background: linear-gradient($angle+180deg, $base, $base - 100);
 	}
@@ -50,10 +55,11 @@ h1 {
 
 
 .page {
-	padding-left: $offset_sidebar;
+	padding-left: $offset_border + $column + $offset_path;
 
 	.title {
-		height: $row / 2;
+		margin-top: $offset_path;
+		height: $row;
 		width: 100%;
 
 		background: linear-gradient($angle, $base, $base - 100);
@@ -69,22 +75,35 @@ h1 {
 	}
 
 	.image-container {
-		margin-top: $offset_border;
+		box-shadow: 15px 15px 40px 0px rgba(0, 0, 0, 0.5);
+		margin-top: $offset_path;
 		overflow: auto;
+
 		.image {
 			margin-left: -600px;
 			float: right;
+			.crop {
+				overflow: hidden;
+				img {
+					margin-top: -20%;
+					max-height: 1200px;
+					max-width: 100%;
+					//opacity: 1.0;
+					//transition: opacity 1s ease-in-out;
+					//note: max-* doesn't change ratio of image
+				}
+				//img:hover {
+				//	opacity:0.0;
+				//	transition: opacity 1s ease-in-out;
+				//}
+
+			}
 		}
 	}
 
-	.crop {
-		overflow: hidden;
-		img {
-			margin-top: -20%;
-			max-height: 1300px;
-			max-width: 100%;
-			//note: max-* doesn't change ratio of image
-		}
+
+	.content {
+		height: 1000px;
 	}
 }
 
