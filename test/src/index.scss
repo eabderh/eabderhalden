@@ -1,0 +1,104 @@
+$column: 200px;
+$row: 200px;
+$offset_border: 40px;
+$offset_sidebar: $column + $offset_border;
+$base: #E12727;
+$angle: 50deg;
+
+body, html {
+	margin: 0;
+}
+
+h1 {
+	font-family: Tahoma,Verdana,Segoe,sans-serif;
+}
+
+
+@mixin bottom-align-outer {
+	position: relative;
+}
+
+@mixin bottom-align-inner {
+	position: absolute;
+	bottom: 0;
+}
+
+
+.sidebar {
+	position: fixed;
+	width: $column;
+	height: 100%;
+
+	background: white;
+
+
+	> div {
+		box-shadow: 15px 15px 40px 0px rgba(0, 0, 0, 0.5);
+	}
+
+	.logo img {
+		width: $column;
+		height: $row;
+	}
+
+	.navigation {
+		margin-top: $offset_border;
+		height: 100%;
+		background: linear-gradient($angle+180deg, $base, $base - 100);
+	}
+}
+
+
+.page {
+	padding-left: $offset_sidebar;
+
+	.title {
+		height: $row / 2;
+		width: 100%;
+
+		background: linear-gradient($angle, $base, $base - 100);
+		box-shadow: 15px 15px 40px 0px rgba(0, 0, 0, 0.5);
+
+		@include bottom-align-outer;
+		h1 {
+			@include bottom-align-inner;
+			color: white;
+			margin: 10px;
+			font-size: 20px;
+		}
+	}
+
+	.image-container {
+		margin-top: $offset_border;
+		overflow: auto;
+		.image {
+			margin-left: -600px;
+			float: right;
+		}
+	}
+
+	.crop {
+		overflow: hidden;
+		img {
+			margin-top: -20%;
+			max-height: 1300px;
+			max-width: 100%;
+			//note: max-* doesn't change ratio of image
+		}
+	}
+}
+
+
+
+
+
+//@mixin vertical-align-outer {
+//	display: table;
+//	text-align: center;
+//}
+//
+//@mixin vertical-align-inner {
+//	display: table-cell;
+//	vertical-align: middle;
+//}
+

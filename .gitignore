@@ -17,8 +17,12 @@
 .*.swp
 
 # additional
-**/*.jpg
 html/Resume
+**/*.jpg
+**/public
+**/other
+**/node_modules
+
 
 
 **/.netrwhist
