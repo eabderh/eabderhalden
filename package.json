@@ -1,0 +1,23 @@
+{
+  "name": "eabderhalden",
+  "version": "1.0.0",
+  "description": "landing page",
+  "main": "test/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node test/server.js",
+    "gulp": "gulp"
+  },
+  "keywords": [],
+  "author": "elias abderhalden",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-jade": "^1.1.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sass": "^2.3.1"
+  }
+}
