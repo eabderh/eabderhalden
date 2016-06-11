@@ -1,8 +1,12 @@
-$column: 250px;
-$row: 100px;
-$offset_path: 50px;
-$offset_border: 50px;
-$offset_sidebar: $column + $offset_path;
+
+
+$top: 50px;
+$side: 80px;
+$topbar_size: 160px;
+$sidebar_size: 160px;
+//$sidebar_size: 250px;
+$path: 50px;
+
 $base: #E12727;
 $angle: 50deg;
 
@@ -13,6 +17,16 @@ $angle: 50deg;
 	position: absolute;
 	bottom: 0;
 }
+
+@mixin vertical-align-outer {
+	display: table;
+}
+
+@mixin vertical-align-inner {
+	display: table-cell;
+	vertical-align: middle;
+}
+
 
 
 body, html {
@@ -29,95 +43,115 @@ h1 {
 	position: fixed;
 	top: 0;
 	left: 0;
-	width: $column;
+	width: $sidebar_size;
 	height: 100%;
-	margin-left: $offset_border;
+	margin-left: $side;
 
-	background: white;
+//	background: white;
 
 	> div {
 		box-shadow: 15px 15px 40px 0px rgba(0, 0, 0, 0.5);
+		border-radius: 20px;
 	}
 	.logo {
-		margin-top: $offset_border;
-	}
-	.logo img {
-		width: $column;
-		height: $column;
+		background: linear-gradient(-60deg, $base, $base - 100);
+		margin-top: $top;
+		height: $sidebar_size;
+		img {
+			//width: $sidebar_size;
+			//height: $sidebar_size;
+			//margin: 1px;
+			width: 	$topbar_size;
+			height: $topbar_size;
+		}
 	}
 
 	.navigation {
-		margin-top: $offset_path;
-		height: 100%;
-		background: linear-gradient($angle+180deg, $base, $base - 100);
+		margin-top: $path;
+		height: 500px;
+		background: linear-gradient(-90deg, $base, $base - 20, $base - 30, $base - 60);
+		//background-image: url("pattern.png");
+		.image {
+			//background-image: url("pattern.png");
+			//background-repeat: repeat;
+			height: 100%;
+		}
+
 	}
 }
 
+.page-container {
+	padding-top: $top;
+	padding-left: $side + $sidebar_size + $path;
+	//padding-left: $side;
+	padding-right: $side;
+	.page {
 
-.page {
-	padding-left: $offset_border + $column + $offset_path;
+		.topbar {
+			//margin-top: $top;
+			height: $topbar_size;
+			width: 100%;
 
-	.title {
-		margin-top: $offset_path;
-		height: $row;
-		width: 100%;
+			//background: linear-gradient($angle, $base, $base - 100);
+			//box-shadow: 15px 15px 40px 0px rgba(0, 0, 0, 0.5);
 
-		background: linear-gradient($angle, $base, $base - 100);
-		box-shadow: 15px 15px 40px 0px rgba(0, 0, 0, 0.5);
+			text-align: left;
+//			padding-left: 40px;
+			overflow: hidden;
+			//@include vertical-align-outer;
+			.title {
+				//@include vertical-align-inner;
+				padding-left: ($topbar_size - 80px) / 2;
 
-		@include bottom-align-outer;
-		h1 {
-			@include bottom-align-inner;
-			color: white;
-			margin: 10px;
-			font-size: 20px;
-		}
-	}
-
-	.image-container {
-		box-shadow: 15px 15px 40px 0px rgba(0, 0, 0, 0.5);
-		margin-top: $offset_path;
-		overflow: auto;
-
-		.image {
-			margin-left: -600px;
-			float: right;
-			.crop {
-				overflow: hidden;
-				img {
-					margin-top: -20%;
-					max-height: 1200px;
-					max-width: 100%;
-					//opacity: 1.0;
-					//transition: opacity 1s ease-in-out;
-					//note: max-* doesn't change ratio of image
-				}
-				//img:hover {
-				//	opacity:0.0;
-				//	transition: opacity 1s ease-in-out;
-				//}
-
+				color: $base;
+				font-size: 80px;
+				font-family: Andale Mono,AndaleMono,monospace;
+				white-space: auto;
+				//text-overflow: clip;
+				line-height: $topbar_size;
 			}
 		}
-	}
 
+		.image-container {
+			//box-shadow: 15px 15px 40px 0px rgba(0, 0, 0, 0.5);
+			margin-top: 200px;
+			//margin-top: $path;
+			//overflow: auto;
 
-	.content {
-		height: 1000px;
+			.image {
+				margin-left: -600px;
+				margin-right: - $side;
+				float: right;
+				.crop {
+					//overflow: hidden;
+					img {
+						margin-top: -30%;
+						max-height: 140%;
+						//max-height: 1200px;
+						max-width: 100%;
+						//max-width: 100%;
+						//note: max-* doesn't change ratio of image
+						//opacity: 1.0;
+						//transition: opacity 1s ease-in-out;
+					}
+					//img:hover {
+					//	opacity:0.0;
+					//	transition: opacity 1s ease-in-out;
+					//}
+
+				}
+			}
+		}
+
+		> .content {
+			margin-top: $path;
+			//box-shadow: 15px 15px 40px 0px rgba(0, 0, 0, 0.5);
+			padding: 2em;
+			//height: 1000px;
+			background: white;
+		}
 	}
 }
 
 
-
-
-
-//@mixin vertical-align-outer {
-//	display: table;
-//	text-align: center;
-//}
-//
-//@mixin vertical-align-inner {
-//	display: table-cell;
-//	vertical-align: middle;
-//}
 
