@@ -12,7 +12,8 @@
   "author": "elias abderhalden",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+    "hover.css": "^2.0.2"
   },
   "devDependencies": {
     "browser-sync": "^2.13.0",
