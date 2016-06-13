@@ -300,45 +300,99 @@ a {
 .bottom-bar {
 	position: absolute;
 	bottom: 0;
-	//left: 0;
+	left: 0;
 	right: 0;
+	height: 5em;
+	overflow: hidden;
 	//background: rgba(0,0,0,0.5);
 	//box-shadow: 15px 15px 40px 0px rgba(0, 0, 0, 0.5);
 	//position: relative;
 	z-index: 1;
 	//top: 100%;
+	color: white;
+	font-family: Andale Mono,AndaleMono,monospace;
+	font-size: 1em;
+	//overflow: hidden;
+	//.sources-trigger:hover {
+	//	//width: auto;
+	//	> * {
+	//		padding: .8em;
+	//	}
+	//	.sources-content {
+	//		//display: inline-block;
+	//		//display: block;
+	//	}
+	//}
+	//.test {
 	.sources-trigger {
-		//display: flex;
-		//margin: 1em;
-		color: white;
-		font-family: Andale Mono,AndaleMono,monospace;
-		font-size: 1em;
-		//.icon:hover {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		height: 5em;
+		//margin-left: -5em;
+		white-space: nowrap;
 
-		//	.sources-content {
-		//		display: none;
-		//	}
-		//}
+		> * {
+			padding: 1em;
+		}
 		.icon {
-			//width: 10px;
-			height: 100px;
+			display: inline-block;
+			vertical-align: middle;
+			width: 3em;
+			height: 3em;
 			background-image: url("chevron-small-left.svg"); 
 			background-repeat: no-repeat;
-			fill: white;
 			//display: inline-block;
 		}
 		.sources-content {
-			float: right;
-			//display: inline-block;
+			display: inline-block;
+			vertical-align: middle;
+			height: 3em;
+			line-height: 1.5em;
+			//display: none;
+			box-shadow: 15px 15px 40px 0px rgba(0, 0, 0, 0.5);
+			border-radius: 1em;
+			background: #333;
+			white-space: nowrap;
 			//margin: 2em;
 			> * {
 				margin: 0;
 				text-align: right;
 			}
 		}
-		//margin-top: -18px;
 	}
+	///}
 }
+
+//.sources-trigger .sources-content{
+//	//transition-duration: 1s;
+//	//transform-origin: right;
+//	//transition: left 1s ease-in-out;
+//	transition: 1s;
+//}
+//
+//.sources-trigger:hover .sources-content {
+//	left: 2em;
+//}
+
+.sources-trigger {
+	transform: translateX(100%) translateX(-5em);
+	transition: 1s;
+	//transition-duration: 1s;
+	//transform-origin: right;
+	//transition: left 1s ease-in-out;
+}
+
+.sources-trigger:hover {
+	transform: translateX(0);
+	//right: 2em;
+}
+//.sources-trigger:hover .sources-content,
+//.sources-trigger:focus .sources-content,
+//.sources-trigger:active .sources-content {
+//	width: auto;
+//}
+
 
 
 //	.navigation {
