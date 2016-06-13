@@ -1,48 +1,32 @@
 html
   head
-    link(href="index.css", rel="stylesheet")
+    link(href="index.css" rel="stylesheet")
+    //link(href="reset.css" rel="stylesheet")
+    link(rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
   body
     div(class="sidebar")
       div(class="sidebar-content")
         div(class="index")
-          a(href="/" class="effect") HOME
-          a(href="work" class="effect") WORK
-          a(href="bio" class="effect") BIO
-    div(class="panel-shader")
-    div(class="panel")
-      div(class="name")
-        h1 Elias
-        h1 Abderhalden
-        h2 Computer Engineer
-    div(class="matterhorn")
-    div(class="bottom-bar")
+          a(href="/" class="fade-effect") HOME 
+            i(class="fa fa-sun-o")
+          a(href="work" class="fade-effect") WORK 
+            i(class="fa fa-code")
+          a(href="bio" class="fade-effect") BIO 
+            i(class="fa fa-heart")
+    div(class="background")
+      div(class="panel-shader")
+      div(class="panel")
+        div(class="name")
+          h1 ELIAS
+          h1 ABDERHALDEN
+          //h1 Elias
+          //h1 Abderhalden
+          h2 Computer Engineer
       div(class="sources-trigger")
-        div(class="icon")
+        //div(class="icon")
+        i(class="fa fa-chevron-left icon")
         div(class="sources-content")
           p Hosted by an Amazon Instance
           p Image by Samuel Zeller @ #[a(href="https://unsplash.com/photos/9RqA6tnT0gA") unsplash.com]
-      //div(class="test")
-    //div(class="half-left" class="shade")
-    //div(class="half-right")
-    //  div(class="navigation")
-          //div(class="logo")
-          //  img(src="logo.png")
-          //div(class="image")
-    //div(class="panel")
-    //div(class="page-container crop")
-    //  div(class="crop")
-    //    div(class="image-container")
-    //      img(src="matterhorn.jpg")
-    //  div(class="bot")
-    //    div(class="image-source") asdf
-      //div(class="image-container crop")
-      //  div(class="image")
-      //    div(class="crop")
-        //div(class="content")
-        //  p test test test text stest setes ste steste etesteef dsfs
-        //  p test test test text stest setes ste steste etesteef dsfs
-        //  p test test test text stest setes ste steste etesteef dsfs
-          //img(src="https://tafttest.com/200x100.png")
-        //img(src="http://placehold.it/200x200")
-        //img(src="pattern.png")
+    //div(class="bottom-bar")
