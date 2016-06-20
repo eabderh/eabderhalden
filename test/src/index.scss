@@ -74,16 +74,25 @@ a {
 	background: $primary;
 	box-shadow: 15px 15px 40px 0px rgba(0, 0, 0, 0.5);
 
+	img {
+		position: absolute;
+		height: 8rem;
+		transform: rotate(-45deg);
+		margin: -1rem;
+		//width: 100px;
+//		float: right;
+	}
+
 	.sidebar-content {
 		display: block;
-		padding-top: $margin_top;
+		padding-top: $margin_top;// + 4rem;
 		.index {
 			> a {
 				display: block;
 				text-align: right;
 				padding: 0.8rem 2.0rem;
 				//margin-bottom: 1.5rem;
-				font-size: 2rem;
+				font-size: 1.5rem;
 				font-weight: bold;
 			}
 
@@ -92,8 +101,15 @@ a {
 	}
 }
 
-
-
+//img:after {
+//	content: ".";
+//	visibility: hidden;
+//	display: block;
+//	height: 0;
+//	clear: both;
+//}
+//
+//
 .panel-shader {
 	z-index: 1;
 	position: absolute;
