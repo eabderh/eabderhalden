@@ -1,25 +1,28 @@
 html
   head
-    link(rel="icon" type="image/x-icon" href="redkite_flat.ico")
+    link(rel="icon" type="image/x-icon" href="redkite_border.ico")
     link(href="index.css" rel="stylesheet")
     //link(href="reset.css" rel="stylesheet")
     link(rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
   body
-    div(class="sidebar")
-      a(href="/" class="logo")
-        include redkite_eight.svg
-      //div(class="logo")
-      //img(src="redkite_eight.svg" class="clearfix")
-      div(class="sidebar-content clearfix")
-        div(class="index")
-          a(href="/" class="fade-effect") ELIAS 
-            i(class="fa fa-sun-o")
-          a(href="work" class="fade-effect") WORK 
-            i(class="fa fa-code")
-          a(href="bio" class="fade-effect") BIO 
-            i(class="fa fa-heart")
-    div(class="background")
+    script(src="https://cdn.jsdelivr.net/jquery/3.0.0/jquery.min.js")
+    script(src="index.js")
+    a(id="mobile-button" href="javascript:void(0);")
+      i(class="fa fa-bars")
+    div(id="mobile-navigation")
+    div(class="page background")
+      div(id="navigation" class="sidebar")
+        a(href="/" class="logo")
+          include redkite_eight.svg
+        div(class="sidebar-content")
+          div(class="index")
+            a(href="/" class="fade-effect") ELIAS 
+              i(class="fa fa-sun-o")
+            a(href="work" class="fade-effect") WORK 
+              i(class="fa fa-code")
+            a(href="bio" class="fade-effect") BIO 
+              i(class="fa fa-heart")
       div(class="panel-shader")
       div(class="panel")
         div(class="name")
@@ -34,4 +37,6 @@ html
         div(class="sources-content")
           p Hosted by an Amazon Instance
           p Image by Samuel Zeller @ #[a(href="https://unsplash.com/photos/9RqA6tnT0gA") unsplash.com]
+    div(class="matterhorn background")
     //div(class="bottom-bar")
+//    script(src="https://cdn.jsdelivr.net/jquery.sidr/2.2.1/jquery.sidr.js")

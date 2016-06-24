@@ -47,7 +47,7 @@ html, body {
 	@include media(">phone","<=tablet") {
 		font-size: 10pt
 	}
-	@include media(">0px","<=phone") {
+	@include media(">0px","<=900px") {
 		font-size: 8pt;
 
 	min-height: 10rem;
@@ -58,6 +58,110 @@ html, body {
 a {
 	color: inherit;
 	text-decoration: none;
+}
+
+
+
+#mobile-button {
+	display: none;
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	z-index: 20;
+	height: 6rem;
+	width: 6rem;
+	//background-color: white;
+	color:black;
+	text-align: center;
+	> * {
+		color: white;
+		font-size: 5rem;
+		line-height: 6rem;
+	}
+}
+
+#mobile-navigation {
+	display: none;
+	z-index: 10;
+	position: fixed;
+	padding-top: 6rem;
+	top: 0;
+	left: -100%;
+	bottom: 0;
+	width: 100%;
+	font-size: 8rem;
+	background: $primary;
+	//box-shadow: 15px 15px 40px 0px rgba(0, 0, 0, 0.5);
+	.index > * {
+		font-size: 2.5rem;
+		text-align: middle;
+	}
+}
+
+
+@include media(">0px","<=900px") {
+	#mobile-button {
+		display: block;
+	}
+	#mobile-navigation {
+//	display: none;
+	display: block;
+	}
+	body {
+	}
+	body .matterhorn {
+		display: none;
+		background: $secondary;
+		position: absolute;
+		z-index: 0;
+	}
+	body .panel-shader {
+		display: none;
+	}
+	body .page {
+		//position: static;
+		//top: 14rem;
+		width: 100%;
+		bottom: auto;
+		background: $secondary;
+		overflow: hidden;
+		.sidebar {
+			position: static;
+			width: 100%;
+			//box-shadow: 0px 15px 40px 0px rgba(0, 0, 0, 0.5);
+
+			.logo {
+				svg#redkite_eight_icon {
+					height: 10rem;
+					margin: 2rem auto;
+					//margin: 1rem;
+				}
+			}
+			.sidebar-content {
+				//display: none;
+				position: static;
+				//left: 0;
+				//right: 0;
+				font-size: 8rem;
+				.index > * {
+					font-size: 2.5rem;
+				}
+			}
+
+		}
+		.panel {
+			position: static;
+			background: none;
+			//background: $secondary;
+			//padding: 1rem;
+			height: 2000px;
+			.name {
+				> h2 {
+					text-align: left;
+				}
+			}
+		}
+	}
 }
 
 
@@ -79,7 +183,7 @@ a {
 		svg#redkite_eight_icon {
 			position: relative;
 			display: block;
-			height: 8rem !important;
+			height: 8rem;
 			margin: $margin_top auto;
 			#group {
 				fill: #FFFFFF;// !important;
@@ -90,19 +194,18 @@ a {
 	.sidebar-content {
 		display: block;
 		//padding-top: $margin_top;// + 4rem;
-		.index {
-			> a {
-				display: block;
-				text-align: center;
-				padding: 0.8rem 2.0rem;
-				//margin-bottom: 1.5rem;
-				font-size: 1.5rem;
-				font-weight: bold;
-			}
 
-		}
 
 	}
+}
+
+.index > * {
+	display: block;
+	text-align: center;
+	padding: 0.8rem 2.0rem;
+	//margin-bottom: 1.5rem;
+	font-size: 1.5rem;
+	font-weight: bold;
 }
 
 //.clearfix:after {
@@ -135,6 +238,8 @@ a {
 	bottom: 0;
 	left: $sidebar_size;
 
+	padding: $margin_top;
+
 	background: rgba(0,0,0,0.5);
 	@include media(">0px","<=1100px") {
 		background: none;
@@ -143,7 +248,6 @@ a {
 	.name {
 		z-index: 2;
 		//padding: 2.5rem;
-		padding: $margin_top;
 		> * {
 			margin: 0;
 			-webkit-font-smoothing: antialiased;
@@ -163,18 +267,8 @@ a {
 
 
 
-.background {
-	position: fixed;
-	top: 0;
-	bottom: 0;
-	right: 0;
-	left: 0;
-
-	background-image: url("matterhorn.jpg");
-	background-position: 100% 100%;
-	background-repeat: no-repeat;
-	background-size: cover;
-	overflow: hidden;
+.page {
+	z-index: 1;
 
 	.sources-trigger {
 		z-index: 1;
@@ -206,6 +300,26 @@ a {
 			}
 		}
 	}
+}
+
+
+.background {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	overflow: hidden;
+}
+
+.matterhorn {
+	z-index: 0;
+
+	background-image: url("matterhorn.jpg");
+	background-position: 100% 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	overflow: hidden;
 }
 
 
@@ -250,7 +364,7 @@ a {
 }
 
 
-.logo:hover {
+body .logo:hover {
 	background-color: $secondary;
 }
 
