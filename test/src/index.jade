@@ -7,10 +7,13 @@ html
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
   body
     div(class="sidebar")
-      img(src="redkite_reduced.svg")
-      div(class="sidebar-content")
+      a(href="/" class="logo")
+        include redkite_eight.svg
+      //div(class="logo")
+      //img(src="redkite_eight.svg" class="clearfix")
+      div(class="sidebar-content clearfix")
         div(class="index")
-          a(href="/" class="fade-effect") HOME 
+          a(href="/" class="fade-effect") ELIAS 
             i(class="fa fa-sun-o")
           a(href="work" class="fade-effect") WORK 
             i(class="fa fa-code")

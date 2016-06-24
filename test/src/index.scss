@@ -74,22 +74,26 @@ a {
 	background: $primary;
 	box-shadow: 15px 15px 40px 0px rgba(0, 0, 0, 0.5);
 
-	img {
-		position: absolute;
-		height: 8rem;
-		transform: rotate(-45deg);
-		margin: -1rem;
-		//width: 100px;
-//		float: right;
+	.logo {
+		display: block;
+		svg#redkite_eight_icon {
+			position: relative;
+			display: block;
+			height: 8rem !important;
+			margin: $margin_top auto;
+			#group {
+				fill: #FFFFFF;// !important;
+			}
+		}
 	}
 
 	.sidebar-content {
 		display: block;
-		padding-top: $margin_top;// + 4rem;
+		//padding-top: $margin_top;// + 4rem;
 		.index {
 			> a {
 				display: block;
-				text-align: right;
+				text-align: center;
 				padding: 0.8rem 2.0rem;
 				//margin-bottom: 1.5rem;
 				font-size: 1.5rem;
@@ -101,15 +105,15 @@ a {
 	}
 }
 
-//img:after {
+//.clearfix:after {
 //	content: ".";
 //	visibility: hidden;
 //	display: block;
 //	height: 0;
 //	clear: both;
 //}
-//
-//
+
+
 .panel-shader {
 	z-index: 1;
 	position: absolute;
@@ -207,8 +211,8 @@ a {
 
 
 .fade-effect {
-	display: inline-block;
-	vertical-align: middle;
+	//display: inline-block;
+	//vertical-align: middle;
 	-webkit-transform: translateZ(0);
 	transform: translateZ(0);
 	box-shadow: 0 0 1px rgba(0, 0, 0, 0);
@@ -221,11 +225,59 @@ a {
 	-webkit-transition-property: color, background-color, box-shadow;
 	transition-property: color, background-color, box-shadow;
 }
+
+
 .fade-effect:hover {
 	background-color: $secondary;
 	color: white;
 	//box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
 }
+
+.logo {
+	//display: inline-block;
+	//vertical-align: middle;
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-moz-osx-font-smoothing: grayscale;
+	overflow: hidden;
+	-webkit-transition-duration: 	0.8s;
+	transition-duration: 			0.8s;
+	-webkit-transition-property: color, background-color, box-shadow;
+	transition-property: background-color;
+}
+
+
+.logo:hover {
+	background-color: $secondary;
+}
+
+
+.logo #kite {
+	//display: inline-block;
+	//vertical-align: middle;
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-moz-osx-font-smoothing: grayscale;
+	overflow: hidden;
+	-webkit-transition-duration: 	0.8s;
+	transition-duration: 			0.8s;
+	-webkit-transition-property: fill;
+	transition-property: fill;
+
+	}
+
+.logo:hover #kite {
+	fill: $primary !important;
+}
+//.logo:hover #tail {
+//	fill: $secondary !important;
+//}
 
 
 .sidebar {
