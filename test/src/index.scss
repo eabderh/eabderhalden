@@ -104,10 +104,8 @@ a {
 		display: block;
 	}
 	#mobile-navigation {
-//	display: none;
-	display: block;
-	}
-	body {
+	//	display: none;
+		display: block;
 	}
 	body .matterhorn {
 		display: none;
@@ -394,39 +392,41 @@ body .logo:hover {
 //}
 
 
-.sidebar {
-	animation-name: move_sidebar;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-out;
-	animation-duration: 0.6s;
-}
-@keyframes move_sidebar {
-	0% {
-		transform: translateX(-$sidebar_size);
+@include media(">900px") {
+	.sidebar {
+		animation-name: move_sidebar;
+		animation-iteration-count: 1;
+		animation-timing-function: ease-out;
+		animation-duration: 0.6s;
 	}
-	100% {
-		transform: translateX(0);
+	@keyframes move_sidebar {
+		0% {
+			transform: translateX(-$sidebar_size);
+		}
+		100% {
+			transform: translateX(0);
+		}
+	}
+
+	.panel, .panel-shader {
+		animation-name: move_panel;
+		animation-iteration-count: 1;
+		animation-timing-function: ease-out;
+		animation-duration: 1.2s;
+	}
+	@keyframes move_panel {
+		0% {
+			transform: translateX(-$sidebar_size);
+		}
+		20% {
+			transform: translateX(-$sidebar_size);
+		}
+		100% {
+			transform: translateX(0);
+		}
 	}
 }
 
-
-.panel, .panel-shader {
-	animation-name: move_panel;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-out;
-	animation-duration: 1.2s;
-}
-@keyframes move_panel {
-	0% {
-		transform: translateX(-$sidebar_size);
-	}
-	20% {
-		transform: translateX(-$sidebar_size);
-	}
-	100% {
-		transform: translateX(0);
-	}
-}
 
 
 .sources-trigger {

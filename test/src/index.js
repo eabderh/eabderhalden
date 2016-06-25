@@ -2,10 +2,20 @@
 
 $(window).on('load', function() {
 	$('.sidebar-content').children().clone().appendTo($('#mobile-navigation'));
+	var test = document.documentElement.clientWidth;
+	var pattern = Trianglify({
+		width: test,
+		height: test,
+		cell_size: 40,
+		palette: Trianglify.colorbrewer,
+		color_space: 'lab',
+		x_colors: Trianglify.colorbrewer.YIOrRd,
+		y_colors: 'match_x',
+		seed: 'asdfg'});
+	$('.test').append(pattern.svg())
 });
-$(window).on('load resize', function() {
+$(window).on('resize', function() {
 	if (document.documentElement.clientWidth < 900) {
-	//if (screen.width < 900px) {
 		$('.sidebar-content').css('display', 'none');
 		}
 	else {
@@ -46,6 +56,5 @@ $(function(){
 		}
 	});
 });
-
 
 

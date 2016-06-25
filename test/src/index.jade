@@ -5,9 +5,10 @@ html
     //link(href="reset.css" rel="stylesheet")
     link(rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
-  body
     script(src="https://cdn.jsdelivr.net/jquery/3.0.0/jquery.min.js")
+    script(src="https://cdn.jsdelivr.net/trianglify/0.4.0/trianglify.min.js")
     script(src="index.js")
+  body
     a(id="mobile-button" href="javascript:void(0);")
       i(class="fa fa-bars")
     div(id="mobile-navigation")
@@ -23,6 +24,13 @@ html
               i(class="fa fa-code")
             a(href="bio" class="fade-effect") BIO 
               i(class="fa fa-heart")
+      script.
+        if (document.documentElement.clientWidth < 900) {
+          $('.sidebar-content').css('display', 'none');
+        }
+        else {
+          $('.sidebar-content').css('display', 'block');
+        }
       div(class="panel-shader")
       div(class="panel")
         div(class="name")
@@ -38,5 +46,6 @@ html
           p Hosted by an Amazon Instance
           p Image by Samuel Zeller @ #[a(href="https://unsplash.com/photos/9RqA6tnT0gA") unsplash.com]
     div(class="matterhorn background")
+    //div(class="test" style="position: fixed; z-index: 40")
     //div(class="bottom-bar")
 //    script(src="https://cdn.jsdelivr.net/jquery.sidr/2.2.1/jquery.sidr.js")
