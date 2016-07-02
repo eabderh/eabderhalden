@@ -1,0 +1,111 @@
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+.view {
+	width: 100%;
+	background: green;
+	overflow-x: hidden; //js transition
+}
+
+.page {
+	position: relative;
+	background: blue;
+	transition-duration: 0.6s;
+	transition-timing-function: ease;
+}
+.page.showindex {
+	left: 0;
+}
+.page.showcontent {
+	left: -100vw;
+}
+
+
+.sidebar-container {
+	flex: 0 0 100vw;
+	background: violet;
+	.sidebar {
+		position: fixed;
+		height: 200vh; //because phone browser top bar disappears
+		width: 100vw;
+		background: red;
+		.logo-container {
+			background: darkred;
+			width: 100%;
+		}
+		.title {
+			background: lightblue;
+		}
+		.index {
+			background: orange;
+			flex: 1 0 auto;
+		}
+	}
+}
+
+#logo {
+	width: 40px;
+	height: 40px;
+	background: yellow;
+	margin: auto;
+}
+
+
+.logo-bar {
+	//display: none; //desktop transition
+	position: fixed;
+	background: lightgreen;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 40px;
+}
+
+
+
+.nav-container {
+	//display: none; //js transition
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	.nav-swipe {
+		position: absolute;
+		width: 100vw;
+		height: 100vh;
+	}
+	.nav-button {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		height: 40px;
+		width: 40px;
+		background: white;
+	}
+}
+
+
+.content {
+	flex: 0 0 100vw;
+	margin-top: 40px; //desktop transition
+	background: grey;
+}
+
+
+.flexcolumn {
+	display: flex;
+	flex-direction: column;
+}
+.flexrow {
+	display: flex;
+	flex-direction: row;
+}
+
+
+
+.content {
+	height: 1000px;
+}

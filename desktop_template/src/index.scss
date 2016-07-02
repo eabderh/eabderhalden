@@ -1,0 +1,98 @@
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+.view {
+	width: 100%;
+	background: green;
+	overflow-x: hidden; //js transition
+}
+
+.page {
+	//width: 100%;
+	position: relative;
+	background: blue;
+	transition-duration: 0.6s;
+	transition-timing-function: ease;
+}
+.page.showindex {
+	left: 0;
+}
+.page.showcontent {
+	left: -100vw;
+}
+
+
+.sidebar-container {
+	//flex: 1 0 100vw; //desktop transition
+	flex: 0 0 200px; //desktop transition
+	background: violet;
+	.sidebar {
+		position: fixed;
+		height: 200vh; //because phone browser top bar disappears
+		//width: 100vw; //desktop transition
+		width: 200px; //desktop transition
+		background: red;
+		.title {
+			background: lightblue;
+		}
+		.index {
+			background: orange;
+			flex: 1 0 auto;
+		}
+	}
+}
+
+
+.logo-container {
+	background: darkred;
+	#logo {
+		width: 40px;
+		height: 40px;
+		background: yellow;
+		margin: auto;
+	}
+}
+
+.content {
+	//flex: 0 0 100vw; //desktop transition
+	//flex: 0 0 auto; //desktop transition ?
+	background: grey;
+	min-height: 100vh;
+}
+
+
+.nav-container {
+	display: none; //js transition desktop transition
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	.nav-button {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		height: 40px;
+		width: 40px;
+		background: white;
+	}
+}
+
+
+
+
+
+
+.flexcolumn {
+	display: flex;
+	flex-direction: column;
+}
+.flexrow {
+	display: flex;
+	flex-direction: row;
+}
+
+
+
