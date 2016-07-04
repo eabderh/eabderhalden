@@ -1,0 +1,189 @@
+
+@import "include-media";
+
+
+@include media($media_sm...) {
+	.sidebar-container,
+	.content-container {
+		flex: 0 0 100vw;
+	}
+	.sidebar {
+		width: 100vw;
+	}
+	.logo-bar,
+	.nav-container {
+		display: block;
+	}
+	.page.showindex {
+		left: 0;
+	}
+	.page.showcontent {
+		left: -100vw;
+	}
+}
+
+@include media($media_bg...) {
+	.sidebar-container {
+		flex: 0 0 $sidebar_width;
+	}
+	.content-container {
+		flex: 0 0 auto;
+	}
+	.sidebar {
+		width: $sidebar_width;
+	}
+	.logo-bar,
+	.nav-container {
+		display: none;
+	}
+	.page.showindex,
+	.page.showcontent {
+		left: 0;
+	}
+}
+
+
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+
+.view {
+	overflow-x: hidden; //js transition
+	width: 100%;
+	height: 100%;
+}
+
+.page {
+	position: relative;
+	transition-duration: 0.6s;
+	transition-timing-function: ease;
+}
+
+.sidebar-container {
+	.sidebar {
+		position: fixed; //js transition
+		height: 200vh; //js transition, because phone browser top bar disappears
+		.logo-container {
+			width: 100%;
+		}
+		.index {
+			flex: 1 0 auto;
+		}
+	}
+}
+
+
+.content-container {
+	min-height: 100vh;
+}
+
+
+//#logo {
+//	//width: $logo_height;
+//	//height: $logo_height;
+//	margin: auto;
+//}
+
+
+.logo-bar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+
+
+
+.nav-container {
+	//display: none; //js ztransition
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	.nav-swipe {
+		position: absolute;
+		width: 100vw;
+		height: 100vh;
+	}
+	.nav-button {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		height: 40px;
+		width: 40px;
+	}
+}
+
+
+
+
+.flexcolumn {
+	display: flex;
+	flex-direction: column;
+}
+.flexrow {
+	display: flex;
+	flex-direction: row;
+}
+
+
+
+// layout help
+
+/*
+
+.view {
+	background: green;
+}
+.page {
+	background: blue;
+}
+.sidebar-container {
+	background: violet;
+}
+.sidebar {
+	background: red;
+}
+.logo-container {
+	background: darkred;
+}
+.logo {
+	height: $logo_height;
+	width: $logo_height;
+	background: yellow;
+	&::before {
+		content: "logo";
+	}
+}
+.title {
+	background: lightblue;
+	&::before {
+		content: "title";
+	}
+}
+.index {
+	background: orange;
+	&::before {
+		content: "index";
+	}
+}
+.content-container {
+	background: grey;
+	height: 1000px;
+	&::before {
+		content: "content";
+	}
+}
+.logo-bar {
+	background: lightgreen;
+}
+.nav-button {
+	background: white;
+}
+
+*/
+
