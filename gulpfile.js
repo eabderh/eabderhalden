@@ -7,10 +7,12 @@ var argv 		= require('yargs').argv;
 var uglify 		= require('gulp-uglify');
 var postcss 	= require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
+//var jsontosass 	= require('gulp-json-to-sass');
 
 var root = argv.d + '/';
-var src_path = root + 'src/';
+var view_path = root + 'view/';
 var public_path = root + 'public/';
+var lib_path = root + 'lib/';
 
 
 
@@ -30,30 +32,30 @@ gulp.task('browserSync', ['jade', 'sass', 'js'], function() {
 });
 
 gulp.task('jade', function() {
-	return gulp.src(src_path + '**/*.jade', {base: src_path})
+	return gulp.src(view_path + '**/*.jade', {base: view_path})
 		.pipe(plumber())
 		.pipe(jade())
 		.pipe(gulp.dest(public_path));
 });
 
 gulp.task('sass', function () {
-	return gulp.src(src_path + '**/*.scss', {base: src_path})
+	return gulp.src(view_path + '**/*.scss', {base: view_path})
 		.pipe(plumber())
-		.pipe(sass().on('error', sass.logError))
+		.pipe(sass({includePaths: [lib_path]}).on('error', sass.logError))
 		.pipe(postcss([autoprefixer({browsers: ['last 2 versions'] })]))
 		.pipe(gulp.dest(public_path))
 		.pipe(browserSync.stream());
 });
 
 gulp.task('js', function() {
-	return gulp.src(src_path + '**/*.js', {base: src_path})
+	return gulp.src(view_path + '**/*.js', {base: view_path})
 		.pipe(uglify())
 		.pipe(gulp.dest(public_path));
 });
 
-gulp.watch(src_path + '**/*.jade', ['jade']);
-gulp.watch(src_path + '**/*.scss', ['sass']);
-gulp.watch(src_path + '**/*.js', ['js']);
+gulp.watch([view_path + '**/*.jade', lib_path + '**/*.jade'], ['jade']);
+gulp.watch([view_path + '**/*.scss', lib_path + '**/*.scss'], ['sass']);
+gulp.watch([view_path + '**/*.js', lib_path + '**/*.js'], ['js']);
 
 
 
