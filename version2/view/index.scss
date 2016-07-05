@@ -5,19 +5,11 @@ $logo_height: 8rem;
 $primary: #E12727;
 $secondary: #3A3939;
 
-$media_sm: ">0px", "<=600px";
-$media_bg: ">600px";
+$media_sm: ">0px", "<=800px";
+$media_bg: ">800px";
 
 @import "layout";
 
-
-@include media($media_sm...) {
-	.view {
-		background: none;
-	}
-}
-@include media($media_bg...) {
-}
 
 html, body {
 	//font-family: Geneva,Tahoma,Verdana,sans-serif;
@@ -50,48 +42,138 @@ h2 {
 }
 h1, h2, p {
 	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
 }
 
+$logo_height: 8rem;
+$logo_margin: 3rem;
+$content_margin: 3rem;
 
+@include media($media_sm...) {
+	$logo_height: 3rem;
+	$logo_margin: 0.5rem;
+	$content_margin: 2rem;
 
-.view {
-	background-image: url("matterhorn.jpg");
-	background-position: 100% 100%;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-//.view {
-//	background-image: url("pattern.png");
-//	//background-position: 100% 100%;
-//	//background-repeat: no-repeat;
-//	//background-size: cover;
-//}
-.logo-container,
-.logo-bar {
-	svg#redkite_eight_icon {
-		display: block;
-		margin: 2rem auto;
+	.page:after {
+		display: none;
+	}
+	.logo-bar svg#redkite_eight_icon {
+		margin: $logo_margin auto;
 		height: $logo_height;
-		#group {
-			fill: #FFFFFF;
+	}
+	.title {
+		margin-bottom: 3rem;
+	}
+	.index > * {
+		width: 50vw;
+		display: block;
+		text-align: center;
+		padding: 0.8rem 2.0rem;
+		margin: 1.5rem auto;
+		font-size: 1.5rem;
+		font-weight: bold;
+		border: white solid 2px;
+		border-radius: 20px;
+		background: $secondary;
+	}
+
+	.content-container {
+		flex: 0 0 auto;
+		width: 100vw;
+		&:before {
+			display: block;
+			content: '';
+			width: 100vw;
+			height: $logo_height + $logo_margin * 2;
+			background: $primary;
 		}
 	}
+	.content {
+		margin: $content_margin $content_margin;
+	}
+	.right-align {
+		text-align: left;
+	}
 }
+@include media($media_bg...) {
+
+	.view {
+		background-image: url("matterhorn.jpg");
+		background-position: 100% 100%;
+		background-repeat: no-repeat;
+		background-size: cover;
+		height: 100vh;
+	}
+	.page:after {
+		display: block;
+	}
+	.sidebar {
+		box-shadow: 15px 15px 40px 0px rgba(0, 0, 0, 0.5);
+	}
+	.content-container {
+		background: rgba(0,0,0,0.5);
+		flex: 0 1 auto;
+	}
+	.content {
+		margin: $content_margin $content_margin;
+	}
+	.right-align {
+		text-align: right;
+	}
+	.index > * {
+		display: block;
+		text-align: center;
+		padding: 0.8rem 2.0rem;
+		//margin-bottom: 1.5rem;
+		font-size: 1.5rem;
+		font-weight: bold;
+	}
+
+}
+
+.view {
+	background-image: url("pattern.png");
+	//background-color: rgba(255,255,255,0.5);
+}
+
+
+.page:after {
+	content: '';
+	flex: 1 0 auto;
+	width: 100%;
+}
+
+
+
 .sidebar {
 	background: $primary;
-	box-shadow: 15px 15px 40px 0px rgba(0, 0, 0, 0.5);
+	.title {
+		text-align: center;
+	}
+}
+
+.logo-container,
+.logo-bar {
+	background: $primary;
 }
 
 
-.content-container {
-	background: rgba(0,0,0,0.5);
-	flex: 0 1 auto;
+svg#redkite_eight_icon {
+	display: block;
+	height: $logo_height;
+	margin: $logo_margin auto;
+	#group {
+		fill: #FFFFFF;
+	}
 }
+
+
+
+
 .content {
-	margin: $logo_height/2 4rem;
+	//margin: $logo_height/2 4rem;
+	height: 1000px;
 	h2 {
-		text-align: right;
 		padding-bottom: 2rem;
 	}
 }
@@ -99,11 +181,6 @@ h1, h2, p {
 
 // pushes the content box left and therefore minimizes it to smallest length
 // possible without breaking the words it contains
-.page:after {
-	content: '';
-	flex: 1 0 auto;
-	width: 100%;
-}
 
 
 

@@ -1,6 +1,7 @@
 html
   head
     link(href="index.css" rel="stylesheet")
+    link(rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
   body
     script(src="https://cdn.jsdelivr.net/jquery/1.11.3/jquery.js")
@@ -10,28 +11,36 @@ html
       });
     script(src="https://cdn.jsdelivr.net/jquery.mobile/1.4.5/jquery.mobile.min.js")
     script(src="index.js")
-    div(class="view")
-      div(class="page showindex flexrow")
+    div(class="view showindex")
+      div(class="page flexrow")
         div(class="sidebar-container flexrow")
           div(class="sidebar flexcolumn")
+            div(class="logo-bar")
+              include redkite_eight.svg
             div(class="logo-container")
               include redkite_eight.svg
             div(class="title")
+              h2 BYTEKITE
             div(class="index")
+              a(href="/" class="fade-effect") ELIAS 
+                i(class="fa fa-sun-o")
+              a(href="work" class="fade-effect") WORK 
+                i(class="fa fa-code")
+              a(href="bio" class="fade-effect") BIO 
+                i(class="fa fa-heart")
         div(class="content-container")
           div(class="content")
-            //div(id="title")
-            h1 ELIAS
-            h1 ABDERHALDEN
-            h2 Computer Engineer
-            //div(id="body")
-            p Thank you for visiting my site! It is still in development but getting better every day.
-      div(class="nav-container")
-        div(class="nav-swipe")
+            div(id="title")
+              h1 ELIAS
+              h1 ABDERHALDEN
+              h2(class="right-align") Computer Engineer
+            div(id="body")
+              p Thank you for visiting my site! It is still in development but getting better every day.
+      //div(class="nav-container")
+        //div(class="nav-swipe")
         div(class="nav-button")
-      div(class="logo-bar")
+      //div(class="logo-bar")
         div(class="logo")
           include redkite_eight.svg
-
 
 
