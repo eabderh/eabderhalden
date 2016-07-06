@@ -1,195 +1,153 @@
 
-@import "include-media";
+
+@import "globals";
+@import "extern/include-media";
+@import "parts/structure";
+@import "parts/sidebar";
 
 
-@include media($media_sm...) {
-	.sidebar-container,
-	.content-container {
-		flex: 0 0 100vw;
-	}
-	.sidebar {
-		width: 100vw;
-	}
-	.logo-bar,
-	.nav-container {
-		display: block;
-	}
-	.showindex .page{
-		left: 0;
-	}
-	.showcontent .page{
-		left: -100vw;
-	}
-}
+html, body {
+	//font-family: Geneva,Tahoma,Verdana,sans-serif;
+	//font-family: Andale Mono, AndaleMono, monospace;
+	//font-family: Tahoma, Verdana, Segoe, sans-serif;
+	font-family: Consolas,monaco,monospace;
 
-@include media($media_bg...) {
-	.sidebar-container {
-		flex: 0 0 $sidebar_width;
+	color: white;
+	@include media($media_bg...) {
+		font-size: 12pt;
 	}
-	.content-container {
-		flex: 0 0 auto;
-	}
-	.sidebar {
-		width: $sidebar_width;
-	}
-	.logo-bar,
-	.nav-container {
-		display: none;
-	}
-	.view.showindex .page,
-	.showcontent .page {
-		left: 0;
+	@include media($media_sm...) {
+		font-size: 8pt;
+
+	min-height: 10rem;
 	}
 }
 
 
-
-* {
-	margin: 0;
-	padding: 0;
+a {
+	color: inherit;
+	text-decoration: none;
 }
-
+h1 {
+	font-size: 4rem;
+}
+h2 {
+	font-size: 2rem;
+}
+h1, h2, p {
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+}
 
 .view {
-	overflow-x: hidden; //js transition
-	width: 100%;
-	min-height: 100vh;
-}
-
-.page {
-	position: relative;
-	transition-duration: 0.6s;
-	transition-timing-function: ease;
+	background-image: url("pattern.png");
 }
 
 
-.sidebar-container {
-	.sidebar {
-		position: fixed; //js transition
-		height: 200vh; //js transition, because phone browser top bar disappears
-		.logo-container {
-			width: 100%;
-			transition-duration: 0.6s;
-			transition-timing-function: ease;
-		}
-		.index {
-			flex: 1 0 auto;
-		}
-	}
-}
 
 
-.content-container {
-	min-height: 100vh;
-}
-
-.logo-bar {
-	position: relative;
-	left: 100vw;
-}
-//#logo {
-//	//width: $logo_height;
-//	//height: $logo_height;
-//	margin: auto;
+//$logo_height: 8rem;
+//$logo_margin: 3rem;
+//$content_margin: 3rem;
+//
+//@include media($media_sm...) {
+//	$logo_height: 3rem;
+//	$logo_margin: 0.5rem;
+//	$content_margin: 2rem;
+//
+//	.page:after {
+//		display: none;
+//	}
+//
+//	.content-container {
+//		flex: 0 0 auto;
+//		width: 100vw;
+//		&:before {
+//			display: block;
+//			content: '';
+//			width: 100vw;
+//			height: $logo_height + $logo_margin * 2;
+//			background: $primary;
+//		}
+//	}
+//	.right-align {
+//		text-align: left;
+//	}
 //}
-
-
+//@include media($media_bg...) {
+//
+//	.view {
+//		background-image: url("matterhorn.jpg");
+//		background-position: 100% 100%;
+//		background-repeat: no-repeat;
+//		background-size: cover;
+//		height: 100vh;
+//	}
+//	.page:after {
+//		display: block;
+//	}
+//	.sidebar {
+//		box-shadow: 15px 15px 40px 0px rgba(0, 0, 0, 0.5);
+//	}
+//	.content-container {
+//		background: rgba(0,0,0,0.5);
+//		flex: 0 1 auto;
+//	}
+//	.right-align {
+//		text-align: right;
+//	}
+//	.index > * {
+//		display: block;
+//		text-align: center;
+//		padding: 0.8rem 2.0rem;
+//		//margin-bottom: 1.5rem;
+//		font-size: 1.5rem;
+//		font-weight: bold;
+//	}
+//
+//}
+//
+//
+//
+//// pushes the content box left and therefore minimizes it to smallest length
+//// possible without breaking the words it contains
+//.page:after {
+//	content: '';
+//	flex: 1 0 auto;
+//	width: 100%;
+//}
+//
+//
+//
+//
+//.sidebar {
+//	background: $primary;
+//	.title {
+//		text-align: center;
+//	}
+//}
+//
+//.logo-container,
 //.logo-bar {
-//	position: fixed;
-//	top: 0;
-//	left: 0;
-//	right: 0;
+//	background: $primary;
 //}
-
-
-
-.nav-container {
-	//display: none; //js ztransition
-	position: fixed;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	.nav-swipe {
-		position: absolute;
-		width: 100vw;
-		height: 100vh;
-	}
-	.nav-button {
-		position: absolute;
-		right: 0;
-		bottom: 0;
-		height: 40px;
-		width: 40px;
-	}
-}
+//
+//
+//svg#redkite_eight_icon {
+//	display: block;
+//	height: $logo_height;
+//	margin: $logo_margin auto;
+//	#group {
+//		fill: #FFFFFF;
+//	}
+//}
+//
+//
 
 
 
 
-.flexcolumn {
-	display: flex;
-	flex-direction: column;
-}
-.flexrow {
-	display: flex;
-	flex-direction: row;
-}
 
 
 
-// layout help
-
-/*
-
-.view {
-	background: green;
-}
-.page {
-	background: blue;
-}
-.sidebar-container {
-	background: violet;
-}
-.sidebar {
-	background: red;
-}
-.logo-container {
-	background: darkred;
-}
-.logo {
-	height: $logo_height;
-	width: $logo_height;
-	background: yellow;
-	&::before {
-		content: "logo";
-	}
-}
-.title {
-	background: lightblue;
-	&::before {
-		content: "title";
-	}
-}
-.index {
-	background: orange;
-	&::before {
-		content: "index";
-	}
-}
-.content-container {
-	background: grey;
-	height: 1000px;
-	&::before {
-		content: "content";
-	}
-}
-.logo-bar {
-	background: lightgreen;
-}
-.nav-button {
-	background: white;
-}
-
-*/
 

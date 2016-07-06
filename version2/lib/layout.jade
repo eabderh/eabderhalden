@@ -1,0 +1,25 @@
+html
+  head
+    block header
+      include parts/defaultheader.jade
+  block variables
+    - var pageid = 'test';
+  body(id=pageid)
+    block scripts
+      include parts/defaultscripts.jade
+    div.view.showindex
+      div.page.flexrow
+        div.sidebar-page
+          div.sidebar-container.flexcolumn
+            include parts/sidebar.jade
+        div.content-page
+          //div.content
+            block content
+      //div.nav-container
+        //div.nav-swipe
+        div.nav-button
+      //div.logo-bar
+        div.logo
+          include redkite_eight.svg
+
+

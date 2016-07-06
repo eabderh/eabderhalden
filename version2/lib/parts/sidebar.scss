@@ -1,0 +1,122 @@
+
+@import "globals";
+@import "extern/include-media";
+
+@mixin divgradient ($count, $divName, $startColor, $ratio) {
+	//$stepRatio: $ratio / $count;
+	$stepRatio: 1 / $count;
+
+	@for $i from 0 through ($count - 1) {
+		//$background-color: darken($startColor, ($i + 1) * $stepRatio);
+		$opacityValue: 1 - ($i * $stepRatio);
+		.#{$divName}#{$i} {
+			//background: $background-color;
+			background-color: rgba(225, 39, 39, $opacityValue);
+		}
+	}
+}
+
+//@include divgradient(4,'colorgradient',$primary, 20);
+
+.sidebar {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	align-items: stretch;
+	//flex-wrap: wrap;
+
+	//background: $primary;
+	//box-shadow: 15px 15px 40px 0px rgba(0, 0, 0, 0.5);
+
+	.logo-container {
+		background: $primary;
+		//display: flex;
+		//flex-direction: column;
+		text-align: center; //align-items: center;
+		svg#redkite_eight_icon {
+			height: $logo_height;
+			margin: $logo_margin 0;
+			#group {
+				fill: #FFFFFF;
+			}
+		}
+	}
+	.title {
+		padding-bottom: 2rem;
+	}
+	.index {
+		//padding: 2rem 0;
+		flex: 1 0 auto;
+		align-self: stretch;
+		display: flex;
+		flex-direction: column;
+		//justify-content: space-around;
+		//justify-content: center;
+		//align-items: center;
+
+		//border-top: white solid 1px;
+		background: $secondary;
+		background: $primary;
+		background: lighten(black, 10);
+		background: #241316;
+		background: $secondary;
+		//background: #1a1a1a;
+		//font-size: 1rem;
+		//font-weight: bold;
+		.dualitem {
+			//margin: 0rem 1rem;
+			padding: 1rem 1rem;
+			display: flex;
+			//background: linear-gradient(black, grey);
+			//border-bottom: white solid 1px;
+			//border-radius: 20px;
+			//flex-direction: row;
+			//justify-content: space-between;
+			> * {
+				flex: 1;
+			}
+			i {
+				text-align: right;
+				font-size: 2rem;
+			}
+			div {
+				font-size: 1.3rem;
+				line-height: 2rem;
+			}
+		}
+	}
+}
+
+
+@include media($media_bg...) {
+	.logo-container,
+	//svg#redkite_eight_icon #kite,
+	#kite,
+	.dualitem {
+		transition-duration: 0.8s;
+		transition-property: background-color, fill;
+	}
+	.dualitem:hover {
+		background-color: $color3;
+		//color: white;
+		//box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
+	}
+	.logo-container:hover {
+		background-color: $color3;
+		//color: white;
+		//box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
+	}
+	.logo-container:hover svg#redkite_eight_icon #kite {
+		fill: $primary !important;
+		//fill: $primary;
+	}
+}
+
+@include media($media_sm...) {
+
+
+}
+
+
+
+
