@@ -2,7 +2,7 @@
   "name": "eabderhalden",
   "version": "1.0.0",
   "description": "landing page",
-  "main": "test/server.js",
+  "main": "main/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node test/server.js",
@@ -20,6 +20,7 @@
     "autoprefixer": "^6.3.6",
     "browser-sync": "^2.13.0",
     "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
     "gulp-jade": "^1.1.0",
     "gulp-plumber": "^1.1.0",
     "gulp-postcss": "^6.1.1",
