@@ -1,8 +1,11 @@
 
 @import "globals";
-@import "layout";
 @import "extern/include-media";
+@import "global_styles";
 
+@import "layout/sidebar_page";
+@import "layout/halfpanel";
+@import "layout/single_page";
 
 
 //.view {

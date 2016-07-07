@@ -9,13 +9,69 @@
 //		padding-bottom: 2rem;
 //	}
 //}
-//
-@include media($media_bg...) {
-	#elias .view {
-		background-image: url("matterhorn.jpg");
-		background-position: 100% 100%;
-		background-repeat: no-repeat;
-		background-size: cover;
-		height: 100vh;
+
+#elias {
+	//highlight current page link
+	.sidebar .index a[href="/elias"] {
+		background: none;
+	}
+	.panel-container {
+		flex: 0 0;
+	}
+	.panel {
+		//height: 2000px;
+		> * {
+			padding: 4rem;
+		}
+		h2 {
+			border-bottom: solid 2px white;
+			padding-bottom: 1rem;
+			text-align: right;
+		}
+		.text {
+			padding: 1rem 0;
+		}
+	}
+	.narrow-container {
+		display: flex;
+		&:after,
+		&:before {
+			display: block;
+			content: '';
+			flex: 1 0;
+		}
+		.narrow {
+			flex: 0 0;
+		}
+	}
+
+	@include media($media_bg...) {
+		// display background image when there is enough room for it
+		.view {
+			background-image: url("matterhorn.jpg");
+			background-position: 100% 100%;
+			background-repeat: no-repeat;
+			background-size: cover;
+			height: 100vh;
+		}
+		.sidebar {
+			background: $primary;
+			box-shadow: 15px 15px 40px 0px rgba(0, 0, 0, 0.5);
+		}
+		.panel {
+			background: rgba(0,0,0,0.5);
+			min-height: 100vh;
+		}
+	}
+	@include media($media_sm...) {
+		.view {
+			background-image: url("pattern.png");
+		}
+		p {
+			font-size: 1.5rem;
+		}
 	}
 }
+
+
+

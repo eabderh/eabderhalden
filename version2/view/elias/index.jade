@@ -1,10 +1,12 @@
-extends /lib/layout.jade
-block variables
+extends /lib/layout/halfpanel.jade
+block bodyid
   - var pageid = "elias";
-block content
-  div.title
-    h1 ELIAS
-    h1 ABDERHALDEN
-    h2.right-align Computer Engineer
-  div.body
-    p Thank you for visiting my site! It is still in development but getting better every day.
+block halfpanel.content
+  div.panel.narrow-container
+    div.narrow
+      div.title
+        h1 ELIAS
+        h1 ABDERHALDEN
+        h2.right-align Computer Engineer
+      div.text
+        p Thank you for visiting my site! It is still in development but getting better every day.

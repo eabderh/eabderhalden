@@ -2,3 +2,89 @@
 @import "globals";
 @import "extern/include-media";
 
+
+#index {
+	.index {
+		background: $primary;
+		display: flex;
+		flex-direction: column;
+		flex: 1 0;
+		border-right: solid 3px #963f3f;
+	}
+	.content {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		perspective: 80px;
+		svg#redkite_eight_icon {
+			height: $logo_height * 3;
+			//filter: blur(1px);
+		}
+	}
+	.index > * {
+		flex: 1;
+		border: none;
+		border-top: solid 3px #da4d4d;
+		border-bottom: solid 3px #963f3f;
+		border-right: solid 3px #da4d4d;
+	}
+	.sidebarfooter {
+		display: none;
+	}
+	@mixin divgradient ($count, $divName, $startColor, $ratio) {
+		//$stepRatio: $ratio / $count;
+		$stepRatio: 1 / ($count + 1);
+		@for $i from 0 through ($count - 1) {
+			//$background-color: darken($startColor, ($i + 1) * $stepRatio);
+			$opacityValue: 1 - (($i + 1) * $stepRatio);
+			.#{$divName}#{$i} {
+				//background: $background-color;
+				background-color: rgba(225, 39, 39, $opacityValue);
+			}
+		}
+	}
+	@include divgradient(4,'colorgradient',$primary, 20);
+
+	@include media($media_bg...) {
+
+
+		svg#redkite_eight_icon #kite,
+		a {
+			transition-duration: 0.8s;
+			transition-property: background-color, fill;
+		}
+		a:hover {
+			background-color: $color3;
+		}
+		a.logo-container:hover {
+			svg#redkite_eight_icon #kite {
+				fill: $primary !important;
+			}
+		}
+
+		.view {
+			background: $primary;
+		}
+		.logo-container,
+		.sidebarfooter {
+			display: none;
+		}
+		.sidebar {
+			background: none;
+			display: flex;
+			flex-direction: column;
+			justify-content: stretch;
+		}
+		.index {
+			flex: 1 0;
+		}
+		.dualitem {
+			padding: 4rem;
+		}
+	}
+}
+
+
+
+
+

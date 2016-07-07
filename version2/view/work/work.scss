@@ -1,0 +1,82 @@
+
+@import "globals";
+@import "extern/include-media";
+
+#work {
+	//highlight current page link
+	.sidebar .index a[href="/work"] {
+		background: none;
+	}
+	.view {
+		background-image: url("pattern.png");
+	}
+	.content a {
+		background: $primary;
+		}
+	.content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.section {
+		max-width: 1000px;
+		> * {
+			margin: 2rem;
+		}
+		h2 {
+			border-bottom: solid 2px white;
+			//margin-bottom: 1rem;
+		}
+		p {
+			text-indent: 2rem;
+			//margin-bottom: 1rem;
+		}
+		.links {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			> a {
+				flex: 1 0;
+				display: flex;
+				align-items: center;
+				max-width: 14rem;
+				padding: 1rem;
+				margin: 1rem;
+				text-align: center;
+				.linktext {
+					flex: 1 0;
+				}
+			}
+		}
+	}
+	@include media($media_bg...) {
+		//.view {
+		//	background-image: url("matterhorn.jpg");
+		//	background-position: 100% 100%;
+		//	background-repeat: no-repeat;
+		//	background-size: cover;
+		//	height: 100vh;
+		//}
+		//.panel {
+		//	background: rgba(0,0,0,0.5);
+		//	min-height: 100vh;
+		//}
+		.content {
+			a {
+				transition-duration: 0.8s;
+				transition-property: background-color, fill;
+			}
+			a:hover {
+				background-color: $secondary;
+			}
+		}
+		.section {
+			padding: 4rem;
+		}
+	}
+	@include media($media_sm...) {
+	}
+}
+
+
+
