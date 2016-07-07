@@ -1,10 +1,10 @@
 div.index
-  a.colorgradient1.dualitem(href="elias")
-    div Elias
-    i(class="fa fa-sun-o")
-  a.colorgradient2.dualitem(href="work")
-    div Work
-    i(class="fa fa-code")
-  a.colorgradient3.dualitem(href="bio")
-    div Bio
-    i(class="fa fa-heart")
+  - var links = ["elias", "info", "work", "bio"];
+  - var linknames = ["Elias", "Info", "Work", "Bio"];
+  - var symbol = ["fa-sun-o", "fa-info-circle", "fa-terminal", "fa-heart"];
+  //- var symbol = ["fa-sun-o", "fa-info-circle", "fa-code", "fa-heart"];
+  each val,index in links
+    a(class="dualitem " + val + " colorgradient" + index href="/" + val)
+      div.linkname= linknames[index]
+      i(class="fa " + symbol[index])
+

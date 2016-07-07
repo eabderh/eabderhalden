@@ -1,0 +1,28 @@
+
+@import "globals";
+@import "extern/include-media";
+
+@import "parts/sidebar";
+
+body.halfpanel {
+	@import "parts/sidebar_page/structure";
+	@include media($media_bg...) {
+		.content.halfpanel {
+			display: flex;
+			&:after {
+				display: block;
+				content: '';
+				flex: 1 0;
+			}
+			&:after,
+			> * {
+				flex: 1 0;
+
+			}
+		}
+	}
+}
+
+
+
+

@@ -1,0 +1,120 @@
+@import "globals";
+@import "extern/include-media";
+
+@import "parts/sidebar";
+
+body.sidebar_page {
+	@import "parts/sidebar_page/structure";
+	.view {
+		background-image: url("pattern.png");
+	}
+}
+
+
+
+
+//$logo_height: 8rem;
+//$logo_margin: 3rem;
+//$content_margin: 3rem;
+//
+//@include media($media_sm...) {
+//	$logo_height: 3rem;
+//	$logo_margin: 0.5rem;
+//	$content_margin: 2rem;
+//
+//	.page:after {
+//		display: none;
+//	}
+//
+//	.content-container {
+//		flex: 0 0 auto;
+//		width: 100vw;
+//		&:before {
+//			display: block;
+//			content: '';
+//			width: 100vw;
+//			height: $logo_height + $logo_margin * 2;
+//			background: $primary;
+//		}
+//	}
+//	.right-align {
+//		text-align: left;
+//	}
+//}
+//@include media($media_bg...) {
+//
+//	.view {
+//		background-image: url("matterhorn.jpg");
+//		background-position: 100% 100%;
+//		background-repeat: no-repeat;
+//		background-size: cover;
+//		height: 100vh;
+//	}
+//	.page:after {
+//		display: block;
+//	}
+//	.sidebar {
+//		box-shadow: 15px 15px 40px 0px rgba(0, 0, 0, 0.5);
+//	}
+//	.content-container {
+//		background: rgba(0,0,0,0.5);
+//		flex: 0 1 auto;
+//	}
+//	.right-align {
+//		text-align: right;
+//	}
+//	.index > * {
+//		display: block;
+//		text-align: center;
+//		padding: 0.8rem 2.0rem;
+//		//margin-bottom: 1.5rem;
+//		font-size: 1.5rem;
+//		font-weight: bold;
+//	}
+//
+//}
+//
+//
+//
+//// pushes the content box left and therefore minimizes it to smallest length
+//// possible without breaking the words it contains
+//.page:after {
+//	content: '';
+//	flex: 1 0 auto;
+//	width: 100%;
+//}
+//
+//
+//
+//
+//.sidebar {
+//	background: $primary;
+//	.title {
+//		text-align: center;
+//	}
+//}
+//
+//.logo-container,
+//.logo-bar {
+//	background: $primary;
+//}
+//
+//
+//svg#redkite_eight_icon {
+//	display: block;
+//	height: $logo_height;
+//	margin: $logo_margin auto;
+//	#group {
+//		fill: #FFFFFF;
+//	}
+//}
+//
+//
+
+
+
+
+
+
+
+

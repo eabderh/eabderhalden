@@ -26,7 +26,7 @@
 		flex: 0 0 $sidebar_width;
 	}
 	.content-page {
-		flex: 0 0 auto;
+		flex: 1 0 auto;
 	}
 	.sidebar-container {
 		width: $sidebar_width;
@@ -43,10 +43,6 @@
 
 
 
-* {
-	margin: 0;
-	padding: 0;
-}
 
 
 .view {
@@ -58,6 +54,7 @@
 	position: relative;
 	transition-duration: 0.6s;
 	transition-timing-function: ease;
+	left: 0;
 	min-height: 100vh;
 }
 .showindex.page{
@@ -75,8 +72,9 @@
 
 .sidebar-container,
 .content-page {
+	display: flex;
 	> * {
-		flex: 1 0 auto;
+		flex: 1 0;
 	}
 }
 

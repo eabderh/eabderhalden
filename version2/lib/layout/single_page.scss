@@ -1,0 +1,29 @@
+
+@import "globals";
+@import "extern/include-media";
+
+
+body.single_page {
+	.view {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		//width: 100vw;
+		//height: 100vh;
+		background: $primary;
+		display: flex;
+	}
+	.sidebar {
+		width: $sidebar_width;
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		> * {
+			flex: 0 0;
+		}
+	}
+}
+

@@ -1,0 +1,20 @@
+extends /lib/basic.jade
+block bodyclass
+  - var layoutclass = "sidebar_page";
+block layout
+  div.view.showcontent
+    div.page.flexrow
+      div.sidebar-page
+        div.sidebar-container.flexcolumn
+          block sidebar
+            include /lib/parts/sidebar.jade
+      div.content-page
+        block content
+    //div.nav-container
+      //div.nav-swipe
+      div.nav-button
+    //div.logo-bar
+      div.logo
+        include redkite_eight.svg
+
+

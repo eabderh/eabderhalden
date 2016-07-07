@@ -1,46 +1,24 @@
-
-
 @import "globals";
 @import "extern/include-media";
-@import "parts/structure";
+
 @import "parts/sidebar";
 
-
-html, body {
-	//font-family: Geneva,Tahoma,Verdana,sans-serif;
-	//font-family: Andale Mono, AndaleMono, monospace;
-	//font-family: Tahoma, Verdana, Segoe, sans-serif;
-	font-family: Consolas,monaco,monospace;
-
-	color: white;
-	@include media($media_bg...) {
-		font-size: 12pt;
-	}
-	@include media($media_sm...) {
-		font-size: 8pt;
-
-	min-height: 10rem;
+body.sidebar_page {
+	@import "parts/sidebar_page/structure";
+	.view {
+		background-image: url("pattern.png");
 	}
 }
-
-
-a {
-	color: inherit;
-	text-decoration: none;
-}
-h1 {
-	font-size: 4rem;
-}
-h2 {
-	font-size: 2rem;
-}
-h1, h2, p {
-	-webkit-font-smoothing: antialiased;
-	font-smoothing: antialiased;
-}
-
-.view {
-	background-image: url("pattern.png");
+.logo-bar {
+	background: $primary;
+	display: flex;
+	.logo-center {
+		//margin: 0 auto;
+	}
+	img {
+		margin: $logobar_margin auto;
+		height: $logobar_height;
+	}
 }
 
 

@@ -1,0 +1,12 @@
+html
+  head
+    block header
+      include parts/header_default.jade
+  block bodyid
+    - var pageid = 'default';
+  block bodyclass
+    - var layoutclass = 'default';
+  body(id=pageid class=layoutclass)
+    block scripts
+      include parts/scripts_default.jade
+    block layout

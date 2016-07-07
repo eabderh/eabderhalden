@@ -1,0 +1,10 @@
+extends /lib/layout/sidebar_page.jade
+block bodyclass
+  - var layoutclass = "halfpanel";
+block content
+  div.content.halfpanel
+    div.panel-container
+      block halfpanel.content
+block sidebar
+  include /lib/parts/sidebar.jade
+
