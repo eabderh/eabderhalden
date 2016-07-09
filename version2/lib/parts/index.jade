@@ -1,7 +1,10 @@
 div.index
-  - var links = ["elias", "info", "work", "bio"];
+  - var links = ["elias", "info", "work"];
   - var linknames = ["Elias", "Info", "Work", "Bio"];
   - var symbol = ["fa-sun-o", "fa-info-circle", "fa-terminal", "fa-heart"];
+  //- var links = ["elias", "info", "work", "bio"];
+  //- var linknames = ["Elias", "Info", "Work", "Bio"];
+  //- var symbol = ["fa-sun-o", "fa-info-circle", "fa-terminal", "fa-heart"];
   //- var symbol = ["fa-sun-o", "fa-info-circle", "fa-code", "fa-heart"];
   each val,index in links
     a(class="dualitem " + val + " colorgradient" + index href="/" + val)
